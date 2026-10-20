@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /*This two are to make it scroll smoothly when visitor clicks a button on the navigation bar*/
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+/*This one keeps the header on top*/
+Header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/*This two are connected to java so the header banner shows when visitor scrolls after the banner video*/
+Header img {
+    width: 100%;
+    display: none;
+}
+
+Header img.goster {
+    display: block;
+}
+
+nav ul {
+    list-style-type: none;
+    background-color: rgb(120, 0, 0);
+    display: flex;
+    margin-top: -5px;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 2vh;
+    text-align: center;
+    display: flex;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vh;
+}
+
+nav a:hover {
+    background-color: rgb(80, 0, 0);
+}
+
+nav a::highlight {
+    color: rgb(107, 0, 0);
+}
+
+.IntroVideo {
+    height: 6000px;
+}
+
+.IntroVideo video {
+    width: 100%;
+}
+
+.holder {
+    position: sticky;
+    top: 0;
+    z-index: -1;
+}
+
+p {
+    font-size: 150%;
+    color: white;
+    padding: 2vh;
+    margin: 2vh;
+    background-color: rgb(136, 0, 0);
+    margin-left: 15vh;
+    margin-right: 15vh;
+}
+
+
+.container1 {
+    font-size: 3vh;
+    margin: 2vh;
+    margin-left: 15vh;
+    margin-right: 15vh;
+    display: flex;
+}
+
+h3 {
+    padding: 2vh;
+    background-color: rgb(136, 0, 0);
+    color: white;
+}
+
+footer {
+    text-align: center;
+    background-color: #000000;
+}
+
+footer p {
+    background-color: #000000;
+}
