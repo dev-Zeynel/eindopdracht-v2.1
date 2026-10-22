@@ -4,7 +4,67 @@
     padding: 0;
     /*This two are to make it scroll smoothly when visitor clicks a button on the navigation bar*/
     scroll-behavior: smooth;
-    scroll-padding-top: 80px;
+    /*This one makes the default scrollbar invisible*/
+    scrollbar-width: none;
+    scroll-snap-type: y mandatory;
+}
+
+@font-face {
+    font-family: ThernalyRegular;
+    src: url(../Fonts/ThernalyRegular.ttf)
+}
+
+@font-face {
+    font-family: ThernalyItalic;
+    src: url(../Fonts/ThernalyItalic.ttf)
+}
+
+@font-face {
+    font-family: Rijusans;
+    src: url(../Fonts/Rijusans.ttf)
+}
+
+h2 {
+    font-family: ThernalyItalic;
+    font-size: 80px;
+}
+
+h3 {
+    font-family: ThernalyRegular;
+    font-size: 30px;
+    margin-top: 2vh;
+}
+
+p {
+    font-family: Rijusans;
+    font-size: 25px;
+}
+
+section {
+    height: 100vh;
+    padding: 16vh 20vh 10vh 20vh;
+    scroll-snap-align: start;
+    scroll-behavior: smooth;
+}
+
+article {
+    margin-top: 5vh;
+}
+
+/*This code is for the progress bar on scroll*/
+.progress {
+    animation: grow linear forwards;
+    animation-timeline: scroll();
+}
+
+@keyframes grow {
+    0% {
+        width: 7%;
+    }
+
+    100% {
+        width: 100%;
+    }
 }
 
 /*This one keeps the header on top*/
@@ -14,19 +74,13 @@ Header {
     width: 100%;
 }
 
-/*This two are connected to java so the header banner shows when visitor scrolls after the banner video*/
-Header img {
-    width: 100%;
-    display: none;
-}
-
-Header img.goster {
-    display: block;
+nav {
+    background-color: #d61111;
 }
 
 nav ul {
     list-style-type: none;
-    background-color: rgb(120, 0, 0);
+    background-color: #780000;
     display: flex;
     margin-top: -5px;
 }
@@ -50,11 +104,13 @@ nav a::highlight {
 }
 
 .IntroVideo {
-    height: 6000px;
+    height: 2000px;
+    scroll-snap-align: start;
 }
 
 .IntroVideo video {
     width: 100%;
+    margin-top: -9.2vh;
 }
 
 .holder {
@@ -63,36 +119,57 @@ nav a::highlight {
     z-index: -1;
 }
 
-p {
-    font-size: 150%;
-    color: white;
-    padding: 2vh;
-    margin: 2vh;
-    background-color: rgb(136, 0, 0);
-    margin-left: 15vh;
-    margin-right: 15vh;
-}
-
-
-.container1 {
-    font-size: 3vh;
-    margin: 2vh;
-    margin-left: 15vh;
-    margin-right: 15vh;
+.TextBox {
+    margin-top: 5vh;
     display: flex;
-}
-
-h3 {
-    padding: 2vh;
-    background-color: rgb(136, 0, 0);
-    color: white;
-}
-
-footer {
+    flex-direction: row;
     text-align: center;
-    background-color: #000000;
+    gap: 5vh;
 }
 
-footer p {
-    background-color: #000000;
+.TextBox h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3vh;
+    background-color: #410000;
+    width: 40vh;
+    height: 30vh;
+    align-items: center;
+    border-radius: 2%;
+    color: rgb(222, 18, 18);
+}
+
+.Chapter {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.Chapter h2 {
+    opacity: 0;
+    animation: FadeIn 2s both;
+    animation-delay: 0.5s;
+    animation-timing-function: view();
+}
+
+.Chapter h3 {
+    opacity: 0;
+    animation: FadeIn 2s both;
+    animation-delay: 1.5s;
+    animation-timing-function: view();
+}
+
+@keyframes FadeIn {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
 }
